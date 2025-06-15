@@ -11,12 +11,19 @@
        
         Title="ACTPhotoIDViewer"
         WindowStartupLocation="CenterScreen"
-       
-
+        Width="1600"
+        Height="1000"
+        MinWidth="1024"
+        MinHeight="600"
+        ExtendClientAreaToDecorationsHint="True"
+        
         
         >
 
-    <Design.DataContext>
+<!--ExtendClientAreaChromeHints="NoChrome"
+WindowState="Maximized"-->
+
+  <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
@@ -33,31 +40,43 @@
     </ExperimentalAcrylicBorder.Material>
   </ExperimentalAcrylicBorder>
    
-      <!--<Grid>
+      <Grid>
         
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*" />
         <ColumnDefinition Width="*" />
       </Grid.ColumnDefinitions>
-     <Image Source="{Binding ImageFromBinding}" Margin="20" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" />
-      <Grid Grid.Column="1">
+     <!--<Image Source="{Binding ImageFromBinding}" Margin="20" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" />-->
+        <Image Source="{Binding ImageFromBinding}"  MinWidth="512" MinHeight="600" Margin="20" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" />
+        
+      <Grid Grid.Column="1" MinWidth="512" Margin="20">
         <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
           <RowDefinition Height="*" />
           <RowDefinition Height="*" />  
       </Grid.RowDefinitions>
-      <TextBlock Text="{Binding Greeting}" Grid.Column="1" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-    </Grid>
-        </Grid>-->
+      <!--<TextBlock Text="{Binding Greeting}" Grid.Column="1" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
 
-    <StackPanel MinWidth="200" MaxWidth="500">
-      <Image Source="{Binding ImageFromBinding}" Margin="20" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" /> 
+        <TextBox Name="CardNumberTextBox" Text="{Binding CardTextEmpty, Mode=TwoWay}" PasswordChar="*" Width="200" 
+                 Background="WhiteSmoke" Margin="20" Grid.Row="1" FontSize="12" HorizontalAlignment="Center" 
+                 VerticalAlignment="Bottom" />
+        <TextBlock Text="{Binding FullName, Mode=TwoWay}" Margin="20" Grid.Row="2" FontSize="96" HorizontalAlignment="Center"
+                  TextWrapping="Wrap" VerticalAlignment="Bottom"/>
+    </Grid>
+        </Grid>
+
+    <!--<StackPanel >
+      --><!--MinWidth="200" MaxWidth="500"--><!--
+      <Image Source="{Binding ImageFromBinding}" Width="512" Height="600" Margin="20" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" />
     </StackPanel>
-    <StackPanel MinWidth="300" MaxWidth="500">
+    <StackPanel>
 
       <TextBox Name="CardNumberTextBox" Text="{Binding CardTextEmpty, Mode=TwoWay}" PasswordChar="*" Width="200" Background="WhiteSmoke" Margin="20 20 10 10" Grid.Row="0" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"  />
       <TextBlock Text="{Binding FullName, Mode=OneWay}" Margin="10 10 10 10" Grid.Row="1" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
  
-   </StackPanel>
+   </StackPanel>-->
 
   </WrapPanel>
 

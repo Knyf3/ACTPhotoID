@@ -23,10 +23,16 @@ namespace ACTPhotoIDViewer.Views
             {
                 if (DataContext is MainWindowViewModel vm)
                 {
-                    // Example: update a property called UserNumber
-                    vm.CardNumber = Int32.Parse(tb.Text);
-
-                    // Optionally, trigger any logic you want here
+                    if (int.TryParse(tb.Text, out int cardNumber))
+                    {
+                        vm.CardNumber = cardNumber;
+                    }
+                    else
+                    {
+                        CardNumberTextBox.Text = string.Empty; // Clear the text box if parsing fails
+                        // Optionally show a message to the user
+                        // Example: MessageBox or set a ViewModel property
+                    }
                 }
             }
         }

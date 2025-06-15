@@ -14,14 +14,19 @@
 
   <ItemGroup>
     <AvaloniaResource Remove="Assets\images\image-portrait-solid.svg" />
+    <AvaloniaResource Remove="Assets\images\NoUserPhoto.png" />
     <AvaloniaResource Remove="Assets\images\testpicture.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Assets\images\NoUserPhoto.png" />
     <None Remove="Settings\Settings.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <ApplicationDefinition Include="Assets\images\NoUserPhoto.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </ApplicationDefinition>
     <ApplicationDefinition Include="Settings\Settings.json" />
   </ItemGroup>
 
@@ -46,6 +51,9 @@
   <ItemGroup>
     <Content Include="Assets\images\image-portrait-solid.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\images\NoUserPhoto.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\images\testpicture.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
