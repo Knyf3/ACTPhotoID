@@ -11,12 +11,12 @@
        
         Title="ACTPhotoIDViewer"
         WindowStartupLocation="CenterScreen"
-        Width="1600"
-        Height="1000"
-        MinWidth="1024"
-        MinHeight="600"
+        Width="600"
+        Height="1024"
+        MinWidth="600"
+        MinHeight="1024"
         ExtendClientAreaToDecorationsHint="True"
-        
+         ExtendClientAreaChromeHints="NoChrome"
         
         >
 
@@ -41,15 +41,23 @@ WindowState="Maximized"-->
   </ExperimentalAcrylicBorder>
    
       <Grid>
+
+          <Grid.RowDefinitions>
+            <RowDefinition Height ="*" />
+            <RowDefinition Height ="*" />
+          </Grid.RowDefinitions>
         
-      <Grid.ColumnDefinitions>
+        
+      <!--<Grid.ColumnDefinitions>
         <ColumnDefinition Width="*" />
         <ColumnDefinition Width="*" />
-      </Grid.ColumnDefinitions>
+      </Grid.ColumnDefinitions>-->
+          
      <!--<Image Source="{Binding ImageFromBinding}" Margin="20" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" />-->
-        <Image Source="{Binding ImageFromBinding}"  MinWidth="512" MinHeight="600" Margin="20" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" />
+          
+        <Image Source="{Binding ImageFromBinding}" Width="600"  MinWidth="512" MinHeight="512" Margin="20, 50, 20, 20"  Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" />
         
-      <Grid Grid.Column="1" MinWidth="512" Margin="20">
+      <Grid Grid.Row="1" MinWidth="512" MinHeight="512" Width="600" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
         <Grid.RowDefinitions>
           <RowDefinition Height="*" />
           <RowDefinition Height="Auto" />
@@ -66,7 +74,7 @@ WindowState="Maximized"-->
                   TextWrapping="Wrap" VerticalAlignment="Bottom"/>
     </Grid>
         </Grid>
-
+     
     <!--<StackPanel >
       --><!--MinWidth="200" MaxWidth="500"--><!--
       <Image Source="{Binding ImageFromBinding}" Width="512" Height="600" Margin="20" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform" />
@@ -80,4 +88,5 @@ WindowState="Maximized"-->
 
   </WrapPanel>
 
+  
 </Window>
