@@ -23,7 +23,7 @@ namespace ACTPhotoIDViewer.Views
             {
                 if (DataContext is MainWindowViewModel vm)
                 {
-                    if (int.TryParse(tb.Text, out int cardNumber))
+                    if (uint.TryParse(tb.Text, out uint cardNumber))
                     {
                         vm.CardNumber = cardNumber;
                     }

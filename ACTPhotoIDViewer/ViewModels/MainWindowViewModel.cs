@@ -3,6 +3,7 @@ using ACTPhotoIDViewer.Models;
 using Avalonia.Media.Imaging;
 using Avalonia.Rendering;
 using Microsoft.Data.SqlClient;
+using MsBox.Avalonia.Base;
 using Newtonsoft.Json.Linq;
 using ReactiveUI;
 using System;
@@ -60,9 +61,9 @@ namespace ACTPhotoIDViewer.ViewModels
         public UserModel User { get; set; }
 
         //public string Greeting { get; } = "Alan Grant";
-        private int cardNumber;
+        private uint cardNumber;
 
-        public int CardNumber
+        public uint CardNumber
         {
             get { return cardNumber; }
             set
@@ -119,6 +120,10 @@ namespace ACTPhotoIDViewer.ViewModels
 
             try
             {
+                //uint unsigned = UInt32.Parse(cardNumber);
+                //int signed = unchecked((int)unsigned);
+                //cardNumber = signed.ToString();
+
                 SQLDataAccess da = new SQLDataAccess(fileSettings);
                 User = da.GetUser(cardNumber);
                 if (User.CardNumber == 0)
